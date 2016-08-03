@@ -8,7 +8,13 @@ h1 {
   font-weight: lighter;
   margin: 0 0 5px 0;
 }
-header {}
+#result {
+  z-index: 2;
+  pointer-events: none;
+  background: rgba(0, 0, 0, .5);
+  padding: .2em .5em;
+  position: absolute;
+}
 section {
   display: block;
   max-width: 600px;
@@ -35,11 +41,11 @@ a {
   border-radius: 50% 50%;
   display: block;
   transform: scale(0.85);
-  transition: 0.4s;
   width: 10vw;
   height: 10vw;
 }
 .cols button:hover { 
+  transition: 0.4s;
   transform: scale(1); 
 }
 ul { 
@@ -75,7 +81,7 @@ li button:hover, li button:focus {
   transition: 0.3s;
 }
 @media only screen and (min-width: 680px) {
-   .cols button {
+  .cols button {
     width: 60px;
     height: 60px;
   }
