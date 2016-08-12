@@ -6,8 +6,8 @@ function getlist($amount, $colours, $names) {
   $tc = $rand[array_rand($rand,1)];
   $json = array();
   $list = '<ul class="cols" data-target="'.$tc.'x'.$colours[$tc].'">';
-  foreach ($rand as $r) {
-    $list .= '<li><button name="c" value="'.$r.'"  style="background:#'.$r.'"></li>';
+  foreach ($rand as $k => $r) {
+    $list .= '<li><button name="c" data-count="'.$k.'" value="'.$r.'"  style="background:#'.$r.'"></li>';
     array_push($json, '"'.$r.'":"'.$colours[$r].'"');
   }
   $list .= '</ul>';

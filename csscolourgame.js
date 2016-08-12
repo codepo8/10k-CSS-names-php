@@ -59,7 +59,26 @@
     list = list.replace(/{.*}/,'');
     showresults();
     resultslist.innerHTML = list;
+    resultslist.querySelector('button').focus();
   }
+
+  function keynav(ev) {
+    var codes = {39:1, 37:-1, 38:-8, 40:8};
+    var t = ev.target;
+    var c = +t.getAttribute('data-count');
+    if (t.tagName === 'BUTTON') {
+      if (codes[ev.keyCode]) {
+        movetobutton(c + codes[ev.keyCode])
+      }
+    }
+  }
+  function movetobutton(i) {
+    if (resultslist.querySelectorAll('button')[i]) {
+      resultslist.querySelectorAll('button')[i].focus()
+    }
+  }
+  resultslist.addEventListener('keyup', keynav);
+
   function fetch(url){
     var request = new XMLHttpRequest();
     request.open('get',url,true);
