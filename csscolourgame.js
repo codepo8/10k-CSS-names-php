@@ -24,6 +24,8 @@
     query.innerHTML = '<p>Find the colour ' + get('name') +' - ' + get('moves') + ' tries left</p>';
     if (col) {
         result.innerHTML = '<p>Nope… ' + gamedata.colours[col] +'</p>';
+        document.body.classList.add('fault');
+        window.setTimeout(function(){document.body.classList.remove('fault');}, 1000);
     } else {
         result.innerHTML = '';
     }
