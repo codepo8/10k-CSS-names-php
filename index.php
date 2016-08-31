@@ -57,7 +57,7 @@ if(isset($_POST['c'])) {
       $rc++;
       $rand = array_rand($colours, $n);
       $tc = $rand[array_rand($rand,1)];
-      $ac = join($rand,')');
+      $ac = join($rand,'_');
     }
   }
 }
